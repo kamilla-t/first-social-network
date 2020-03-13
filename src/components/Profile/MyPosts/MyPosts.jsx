@@ -2,14 +2,14 @@ import React from 'react';
 import s from '../MyPosts/MyPosts.module.css';
 import Post from '../MyPosts/Post/Post';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
-  let posts = [
-    { id: 1, message: 'Hi, how are you?', likesCount: 12 },
-    { id: 2, message: "It's my first post", likesCount: 11 }
-  ]
+  // let posts = [
+  //   { id: 1, message: 'Hi, how are you?', likesCount: 12 },
+  //   { id: 2, message: "It's my first post", likesCount: 11 }
+  // ]
   
-  let postElements = posts.map(p => <Post message={p.message} likesCount={p.likesCount} />);
+  let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} />);
 
   return (
     <div className={s.postsBLock}>
@@ -33,7 +33,7 @@ const MyPosts = () => {
 
       <div className={s.posts}>
         {
-          postElements
+          postsElements
         }
         {/* <Post message={postData[0].message} likesCount={postData[0].likesCount} />
         <Post message={postData[1].message} likesCount={postData[1].likesCount} /> */}
