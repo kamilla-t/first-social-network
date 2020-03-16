@@ -1,6 +1,7 @@
 import React from 'react';
 import s from '../Navbar/Navbar.module.css';
 import { NavLink } from 'react-router-dom';
+import Block from './Block';
 
 //let s = {
 // 'nav': 'Navbar_nav__2XXKq';
@@ -8,8 +9,8 @@ import { NavLink } from 'react-router-dom';
 // 'active' : 'Navbar_item__1BaKE.Navbar_active__3k5bJ';
 //}
 
-let c1 = "item";
-let c2 = "active";
+// let c1 = "item";
+// let c2 = "active";
 // "item active"
 //let classes = c1 + " " + c2;
 //let classesNew = ${s.item} + ${s.active};
@@ -31,6 +32,9 @@ const Navbar = () => {
             </div>
             <div className={s.item}>
                 <NavLink to='/settings' activeClassName={s.activeLink}>Settings</NavLink>
+            </div>
+            <div>
+                <Block />
             </div>
         </nav>
     )

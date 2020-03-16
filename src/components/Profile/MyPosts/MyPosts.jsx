@@ -4,12 +4,15 @@ import Post from '../MyPosts/Post/Post';
 
 const MyPosts = (props) => {
 
-  // let posts = [
-  //   { id: 1, message: 'Hi, how are you?', likesCount: 12 },
-  //   { id: 2, message: "It's my first post", likesCount: 11 }
-  // ]
-  
   let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} />);
+
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    debugger;
+    let text = newPostElement.current.value;
+    props.addPost(text);
+  }
 
   return (
     <div className={s.postsBLock}>
@@ -17,16 +20,14 @@ const MyPosts = (props) => {
       <h3>My posts</h3>
       <div>
 
-          <div>
-            <textarea></textarea>
-          </div>
-
         <div>
-          <button>Add post</button>
+          <textarea ref={newPostElement}></textarea>
         </div>
 
         <div>
-          <button>Remove</button>
+          <button onClick={addPost}>
+            Add post
+          </button>
         </div>
 
       </div>
