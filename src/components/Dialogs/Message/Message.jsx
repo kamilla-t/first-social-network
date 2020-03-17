@@ -6,9 +6,9 @@ const Message = (props) => {
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        debugger;
         let text = newMessageElement.current.value;
         props.addMessage(text);
+        newMessageElement.current.value = ' ';
     }
 
     return (
@@ -22,12 +22,12 @@ const Message = (props) => {
 
                 <div>
                     <textarea ref={newMessageElement}></textarea>
-
-                    <div>
-                        <button onClick={addMessage}>Add message</button>
-                    </div>
                 </div>
-            </div >
+
+                <div>
+                    <button onClick={addMessage}>Add message</button>
+                </div>
+            </div>
         </div>
     )
 }
